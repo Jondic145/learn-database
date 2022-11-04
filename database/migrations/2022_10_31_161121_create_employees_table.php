@@ -14,11 +14,13 @@ class CreateEmployeesTable extends Migration
     public function up()
     {
         Schema::create('employees', function (Blueprint $table) {
-            $table->id();
-            $table->varchar('nama_pegawai', 255 );
-            $table->jabatan('');
-            $table->tanggal_masuk();
-            $table->status();
+            $table->string('nip', 5)->primary();
+            $table->string('nama_pegawai', 255);
+            $table->date('tanggal_lahir');
+            $table->string('jabatan', 255);
+            $table->date('tanggal_masuk');
+            $table->char('status', 1);
+            $table->timestamps();
         });
     }
 

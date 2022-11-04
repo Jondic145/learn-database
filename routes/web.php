@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BookController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [App\Http\Controllers\BooksController::class, 'index']);
-Route::get('/insert', [App\Http\Controllers\BooksController::class, 'insert']);
+// Route::get('/', [App\Http\Controllers\EmployeesController::class, 'index']);
+// Route::get('/insert', [App\Http\Controllers\EmployeesController::class, 'insert']);
+Route::get('/insert', [App\Http\Controllers\BookController::class, 'insert']);
+Route::get('/update', [App\Http\Controllers\BookController::class, 'update']);
+Route::get('/delete', [App\Http\Controllers\BookController::class, 'delete']);
+Route::get('/select', [App\Http\Controllers\BookController::class, 'select']);
+
 
